@@ -1,1 +1,1 @@
-# solidity.applications
+various solidity application/ use cases
