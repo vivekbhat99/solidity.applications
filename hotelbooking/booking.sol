@@ -1,17 +1,19 @@
-pragma solidity ^0.5.0;
+ontract roomBooking{
+   
+    address payable private owner;
+    
+    struct bookersDetail{
+        string storage name;
+        address _address;
+        uint8 daysOfStay;
+    }
 
-contract roomBooking{
-    
-    uint public dateofArrival;
-    address personBooked;
-    
-    
-    address payable public owner;
-    
     enum statuses {vacant, reserved, occupied}
     statuses currentStatus;
     
+    
     event bookedBy(address indexed _add, uint indexed _payment);
+    
     
     constructor() public {
         owner = msg.sender;
@@ -24,7 +26,7 @@ contract roomBooking{
     }
     
      
-   function bookAroom(uint daysOfStay) payable public isVacant{
+   function bookAroom(uint _daysOfStay) payable public isVacant{
         require(msg.value==2 ether,"Insufficient ethers payment = ethers per day of stay");
         personBooked = msg.sender;
         owner.transfer(msg.value);
