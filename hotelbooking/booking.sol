@@ -1,3 +1,4 @@
+pragma solidity ^0.5.0;
 contract booking{
    
     address payable private owner;
