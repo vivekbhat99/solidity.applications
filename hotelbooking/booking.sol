@@ -9,17 +9,25 @@ contract booking{
         uint8 daysOfStay;
     }
 
-//array to store rooms 
-//
+    event bookedBy(string memory _name, address indexed _addr, uint indexed _payment);
 
-    enum statuses {vacant, reserved, occupied}
+//array to store rooms 
+//map room number to bookers using count - this will be private - use if loops
+// function to view room number for booker
+// if he books again display error 
+//  keep count of booked room, if exceeds throw error
+//keep track of status, and in open function start countdown of days start once days expired keep as vacant
+
+
+    
+    enum statuses {vacant, occupied}
     statuses currentStatus;
 
-    event bookedBy(string memory _name, address indexed _addr, uint indexed _payment);
-    
     //passing number of rooms in the hotel by owner
     constructor(uint8 _numberOfRooms) public {
         owner = msg.sender;
+        uint8 rooms[_numberOfRooms];
+
         numberOfRooms = _numberOfRooms;
        //change below line to array ie all rooms vacant
        // currentStatus = statuses.vacant;
