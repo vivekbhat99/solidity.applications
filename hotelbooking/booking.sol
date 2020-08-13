@@ -1,57 +1,53 @@
-pragma solidity ^0.5.0;
+ragma solidity ^0.5.0;
 contract booking{
-   
     address payable private owner;
     uint8 public numberOfRooms;
-    
+    uint8 count = 0;
     struct bookersDetail{
-        string storage name;
-        address _address;
-        uint8 daysOfStay;
+        bytes32 name;
+        uint8 roomNumber;
     }
 
-    event bookedBy(string memory _name, address indexed _addr, uint indexed _payment);
+    event bookedBy(bytes32 _name, address indexed _addr, uint indexed _payment);
+    mapping (address => bookersDetail) roomBookedBy;
+    address[] Rooms;
 
-//array to store rooms 
-//map room number to bookers using count - this will be private - use if loops
-// function to view room number for booker
-// if he books again display error 
-//  keep count of booked room, if exceeds throw error
-//keep track of status, and in open function start countdown of days start once days expired keep as vacant
-
-
-    
-    enum statuses {vacant, occupied}
-    statuses currentStatus;
-
-    //passing number of rooms in the hotel by owner
-    constructor(uint8 _numberOfRooms) public {
-        owner = msg.sender;
-        uint8 rooms[_numberOfRooms];
-
-        numberOfRooms = _numberOfRooms;
-       //change below line to array ie all rooms vacant
-       // currentStatus = statuses.vacant;
+    //passing number of rooms in the hotel by owner and initializing it empty by 0;
+    function enterNumberofRooms(uint8 _numberOfRooms) private {
+        require(owner = msg.sender);
+        uint8[] memory roomStatus = new uint8[](_numberOfRooms);
+        for (uint8 i=0; i < roomStatus.length; i++) {
+           roomStatus[i] = 0;
+        }
+      
     }
     
+    //checks if atleast one room is empty by iterating array 
     modifier isVacant {
-        require(currentStatus == statuses.vacant,"The room is currently occupied :/");
+         require(
+             count<numberOfRooms, "Oops! All rooms are filled :/" );
         _;
     }
     
-     
-   function bookAroom(string memory _name, uint _daysOfStay) payable public isVacant{
+   function bookAroom(bytes32 _name) payable public isVacant returns(uint8){  // output room number
         require(msg.value==2 ether,"Insufficient ethers payment = ethers per day of stay");
-        personBooked = msg.sender;
         owner.transfer(msg.value);
-        currentStatus = statuses.reserved;
-        emit bookedBy(_name, msg.sender, msg.value);
+        uint8 _number;
+        for (uint i = 0; i<roomStatus.length; i++){
+            if(roomStatus(i) == 0){
+                _number = roomStatus[i];
+                break;
+            }
+        }
+        count++;
+        roomStatus[_number] = 1;
+        var booker = roomBookedBy[msg.sender];
+        booker.name = _name;
+        booker.roomNumber = _number;
+        Rooms.push(msg.sender);
+        emit bookedBy(_name, msg.sender, msg.value, _number);
     }
     
-    function openRoom() public {
-        require (msg.sender == personBooked, "you have not booked this :/");
-        currentStatus = statuses.occupied;
-    }
     
     
     
