@@ -1,0 +1,214 @@
+{
+  "contractName": "todolist",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "tasks",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"tasks\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/vivek/Blockchain/Projects/solidity.applications/todo/contracts/todolist.sol\":\"todolist\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/vivek/Blockchain/Projects/solidity.applications/todo/contracts/todolist.sol\":{\"keccak256\":\"0x9482a521f30ba046e4da3275a0585484c8dafa9f939fe253b2dea2b8a99b38b3\",\"urls\":[\"bzz-raw://9582297dd114b9bdd18273deb1fa8d3fdf1992ea1a5a1dccbc61e2f20037bc91\",\"dweb:/ipfs/QmVjrCRmCSbkBdqatnt41STAX8hT3CvTj2KNivWEknLjf5\"]}},\"version\":1}",
+  "bytecode": "0x608060405260008060006101000a81548161ffff021916908361ffff160217905550348015602c57600080fd5b5060998061003b6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063c305a6d914602d575b600080fd5b60336051565b604051808261ffff1661ffff16815260200191505060405180910390f35b6000809054906101000a900461ffff168156fea265627a7a72315820a6fe361a74439f393ccf7a5aa72c0e7e7e711848080b03ad3de76361f569229764736f6c63430005100032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063c305a6d914602d575b600080fd5b60336051565b604051808261ffff1661ffff16815260200191505060405180910390f35b6000809054906101000a900461ffff168156fea265627a7a72315820a6fe361a74439f393ccf7a5aa72c0e7e7e711848080b03ad3de76361f569229764736f6c63430005100032",
+  "sourceMap": "25:44:1:-;;;65:1;44:22;;;;;;;;;;;;;;;;;;;;25:44;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:44:1;;;;;;;",
+  "deployedSourceMap": "25:44:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:44:1;;;;;;;;;;;;;;;;;;;44:22;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity 0.5.16;\n\ncontract todolist{\nuint16 public tasks =0;\n}",
+  "sourcePath": "/home/vivek/Blockchain/Projects/solidity.applications/todo/contracts/todolist.sol",
+  "ast": {
+    "absolutePath": "/home/vivek/Blockchain/Projects/solidity.applications/todo/contracts/todolist.sol",
+    "exportedSymbols": {
+      "todolist": [
+        42
+      ]
+    },
+    "id": 43,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 38,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 42,
+        "linearizedBaseContracts": [
+          42
+        ],
+        "name": "todolist",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 41,
+            "name": "tasks",
+            "nodeType": "VariableDeclaration",
+            "scope": 42,
+            "src": "44:22:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint16",
+              "typeString": "uint16"
+            },
+            "typeName": {
+              "id": 39,
+              "name": "uint16",
+              "nodeType": "ElementaryTypeName",
+              "src": "44:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint16",
+                "typeString": "uint16"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 40,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "65:1:1",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          }
+        ],
+        "scope": 43,
+        "src": "25:44:1"
+      }
+    ],
+    "src": "0:69:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/vivek/Blockchain/Projects/solidity.applications/todo/contracts/todolist.sol",
+    "exportedSymbols": {
+      "todolist": [
+        42
+      ]
+    },
+    "id": 43,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 38,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".16"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 42,
+        "linearizedBaseContracts": [
+          42
+        ],
+        "name": "todolist",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 41,
+            "name": "tasks",
+            "nodeType": "VariableDeclaration",
+            "scope": 42,
+            "src": "44:22:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint16",
+              "typeString": "uint16"
+            },
+            "typeName": {
+              "id": 39,
+              "name": "uint16",
+              "nodeType": "ElementaryTypeName",
+              "src": "44:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint16",
+                "typeString": "uint16"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 40,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "65:1:1",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          }
+        ],
+        "scope": 43,
+        "src": "25:44:1"
+      }
+    ],
+    "src": "0:69:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x9643c162E8d31104d6b5a3078639A47A157C70c2",
+      "transactionHash": "0x9b6686193f57cc57d24288b7727c64f9e406f822e9c73643c896d6313d126901"
+    }
+  },
+  "schemaVersion": "3.2.0",
+  "updatedAt": "2020-08-17T13:13:56.031Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
