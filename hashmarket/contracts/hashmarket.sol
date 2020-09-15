@@ -1,5 +1,7 @@
 pragma solidity ^0.5.16;
 
+// basic buy sell and amount widthdrawal
+
 contract hashmarket{
 
     enum ItemStatus {active, sold, removed}
@@ -11,7 +13,7 @@ contract hashmarket{
         ItemStatus status;
     }
 
-  event ItemAdded(bytes32 name, uint price, address seller);
+    event ItemAdded(bytes32 name, uint price, address seller);
     event ItemPurchased(uint itemID, address buyer, address seller);
     event ItemRemoved(uint itemID);
     event FundsPulled(address owner, uint amount);
@@ -36,7 +38,7 @@ contract hashmarket{
         emit ItemAdded(name, price, msg.sender);
         // Item is pushed to the end, so the lenth is used for
         // the ID of the item
-        return _items.length - 1;
+        return _items.length -1;
     }
 
     function getItem(uint itemID) public view onlyIfItemExists(itemID)
@@ -82,5 +84,4 @@ contract hashmarket{
             return false;
         }
     }
-
 }
